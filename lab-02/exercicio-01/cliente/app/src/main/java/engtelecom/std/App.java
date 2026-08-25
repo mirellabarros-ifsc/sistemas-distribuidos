@@ -27,13 +27,19 @@ public class App {
         ){
             IO.println("Conectando no servidor...");
 
-            writer.write("Olá! Eu sou o cliente.");
-            writer.newLine();
-            writer.flush();
+            String mensagem = "";
+            String resposta = "";
 
-            String resposta = reader.readLine();
+            while (!mensagem.toLowerCase().equals("sair")) {
+                mensagem = IO.readln("Entre com a mensagem: ");
+                writer.write(mensagem);
+                writer.newLine();
+                writer.flush();
+                resposta = reader.readLine();
+                System.out.printf("Resposta do servidor: %s%n", resposta);
+            }
 
-            System.out.printf("Resposta do servidor: %s%n", resposta);
+
             IO.println("Cliente finalizado");
 
         } catch (Exception e) {
