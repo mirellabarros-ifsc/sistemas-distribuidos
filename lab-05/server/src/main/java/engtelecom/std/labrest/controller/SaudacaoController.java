@@ -1,4 +1,4 @@
-package engtelecom.std.labrest.conroller;
+package engtelecom.std.labrest.controller;
 
 import engtelecom.std.labrest.entities.Saudacao;
 import org.springframework.web.bind.annotation.GetMapping;
